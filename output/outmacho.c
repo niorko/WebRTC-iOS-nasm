@@ -2434,6 +2434,10 @@ bool macho_set_min_os(const char *str) {
     } else if ((strstr(platform_ver, "ios") == platform_ver)) {
         if (environment[0] == '\0') {
             platform = PLATFORM_IOS;
+        } else if ((strstr(environment, "appletvos") == environment)) {
+            platform = PLATFORM_TVOS;
+        } else if ((strstr(environment, "appletvsimulator") == environment)) {
+            platform = PLATFORM_TVOSSIMULATOR;
         } else if ((strstr(environment, "simulator") == environment)) {
             platform = PLATFORM_IOSSIMULATOR;
         } else if ((strstr(environment, "catalyst") == environment)) {
