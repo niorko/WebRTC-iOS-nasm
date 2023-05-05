@@ -57,7 +57,7 @@ if ((is_mac || is_ios) && (current_cpu == "x86" || current_cpu == "x64")) {
   if (is_mac) {
     _nasm_flags += [ "--macho-min-os=macos$mac_deployment_target" ]
   } else if (is_ios) {
-    if (target_environment == "device") {
+    if (target_environment == "device" || target_environment == "appletvos") {
       _nasm_flags += [ "--macho-min-os=ios$ios_deployment_target" ]
     } else {
       _nasm_flags +=
